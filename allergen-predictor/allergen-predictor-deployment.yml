@@ -1,24 +1,24 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: frontend
+  name: allergen-predictor
   labels:
-    app: frontend-app
+    app: allergen-predictor-app
 spec:
   replicas: 2
   selector:
     matchLabels:
-      app: frontend-app
+      app: allergen-predictor-app
   template:
     metadata:
       labels:
-        app: frontend-app
+        app: allergen-predictor-app
     spec:
       containers:
-      - name: peakwell-frontend
-        image: hazem231/peakwell-frontend:v7
+      - name: peakwell-allergen-predictor
+        image: hazem231/allergen-predictor:v7
         ports:
-        - containerPort: 80
+        - containerPort: 8004
         resources:
           limits:
             cpu: "500m"

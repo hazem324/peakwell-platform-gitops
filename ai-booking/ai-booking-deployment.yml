@@ -1,24 +1,24 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: frontend
+  name: ai-booking
   labels:
-    app: frontend-app
+    app: ai-booking-app
 spec:
   replicas: 2
   selector:
     matchLabels:
-      app: frontend-app
+      app: ai-booking-app
   template:
     metadata:
       labels:
-        app: frontend-app
+        app: ai-booking-app
     spec:
       containers:
-      - name: peakwell-frontend
-        image: hazem231/peakwell-frontend:v7
+      - name: peakwell-ai-booking
+        image: hazem231/ai-booking:v7
         ports:
-        - containerPort: 80
+        - containerPort: 8001
         resources:
           limits:
             cpu: "500m"

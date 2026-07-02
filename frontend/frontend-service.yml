@@ -9,4 +9,4 @@ spec:
   ports:
   - protocol: TCP
     port: 4200           # The port the Service listens on inside the cluster
-    targetPort: 4200     # The port your container is actually running on
+    targetPort: 80     # The port your container is actually running on
