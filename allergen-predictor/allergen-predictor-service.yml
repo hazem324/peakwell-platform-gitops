@@ -5,7 +5,7 @@ metadata:
 spec:
   type: ClusterIP      # Internal cluster communication only
   selector:
-    app: ai-event-app        # MUST match your Deployment's template labels
+    app: allergen-predictor-app       # MUST match your Deployment's template labels
   ports:
   - protocol: TCP
     port: 8003           # The port the Service listens on inside the cluster

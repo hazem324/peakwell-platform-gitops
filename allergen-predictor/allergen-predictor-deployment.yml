@@ -18,7 +18,7 @@ spec:
       - name: peakwell-allergen-predictor
         image: hazem231/allergen-predictor:v7
         ports:
-        - containerPort: 8004
+        - containerPort: 8003
         resources:
           limits:
             cpu: "500m"
