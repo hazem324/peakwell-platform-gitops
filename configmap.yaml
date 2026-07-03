@@ -1,0 +1,74 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: backend-config
+data:
+  SPRING_APPLICATION_NAME: "peakWell"
+
+  SERVER_PORT: "8090"
+  SERVER_SERVLET_CONTEXT_PATH: "/peakwell"
+
+  KEYCLOAK_SERVER_URL: "http://keycloak-service:8180"
+  KEYCLOAK_PUBLIC_URL: "http://keycloak-service:8180"
+  KEYCLOAK_REALM: "peakwell"
+  KEYCLOAK_CLIENT_ID: "spring-client"
+  KEYCLOAK_CLIENT_ID_FRONT: "angular-client"
+
+  SPRING_SECURITY_OAUTH2_RESOURCESERVER_JWT_ISSUER_URI: "http://keycloak-service:8180/realms/peakwell"
+
+  APP_VERIFY_EMAIL_REDIRECT_URL: "http://frontend-service/auth/login"
+  APP_FRONTEND_URL: "http://frontend-service"
+
+  APP_PUBLIC_URL: "https://your-domain.com/peakwell"
+
+  CLOUDINARY_CLOUD_NAME: "dbmb50bso"
+  CLOUDINARY_CAPTCHA_FOLDER: "peakwell/recaptcha"
+
+  SPRING_MAIL_HOST: "smtp.gmail.com"
+  SPRING_MAIL_PORT: "587"
+  APP_MAIL_FROM: "achrefpatron38@gmail.com"
+
+  SPRING_MAIL_PROPERTIES_MAIL_SMTP_AUTH: "true"
+  SPRING_MAIL_PROPERTIES_MAIL_SMTP_STARTTLS_ENABLE: "true"
+  SPRING_MAIL_PROPERTIES_MAIL_SMTP_STARTTLS_REQUIRED: "true"
+  SPRING_MAIL_PROPERTIES_MAIL_SMTP_SSL_TRUST: "smtp.gmail.com"
+
+  MANAGEMENT_ENDPOINTS_WEB_EXPOSURE_INCLUDE: "health,info,prometheus"
+  MANAGEMENT_ENDPOINT_PROMETHEUS_ENABLED: "true"
+  MANAGEMENT_METRICS_EXPORT_PROMETHEUS_ENABLED: "true"
+
+  PEAKWELL_AI_ML_URL: "http://ai-booking-service:8001"
+  PEAKWELL_AI_SYMPTOM_URL: "http://allergen-service:8002"
+  PEAKWELL_AI_NUTRITION_URL: "http://nutrition-service:8003"
+  PEAKWELL_AI_SPORT_URL: "http://ai-event-service:8004"
+
+  AI_MODEL: "moonshotai/Kimi-K2-Instruct-0905"
+  AI_API_URL: "https://router.huggingface.co/v1/chat/completions"
+
+  AI_FACE_API_URL: "https://api-us.faceplusplus.com/facepp/v3/compare"
+
+  STRIPE_CURRENCY: "tnd"
+
+  CONSULTATION_PRICE: "5000"
+
+  PAYMENT_CURRENCY: "usd"
+  PAYMENT_PRICE_CONSULTATION: "5000"
+  PAYMENT_PRICE_SPORTS_EVENT: "2000"
+  PAYMENT_PRICE_NUTRITION_PLAN: "9900"
+  PAYMENT_PRICE_SUBSCRIPTION_MONTHLY: "1990"
+  PAYMENT_PRICE_SUBSCRIPTION_YEARLY: "14900"
+
+  JWT_EXPIRATION: "86400000"
+
+  CAPTCHA_CHALLENGE_TTL_MINUTES: "3"
+  CAPTCHA_TOKEN_TTL_MINUTES: "5"
+
+  SPRING_SERVLET_MULTIPART_MAX_FILE_SIZE: "5MB"
+  SPRING_SERVLET_MULTIPART_MAX_REQUEST_SIZE: "5MB"
+
+  SPRING_WEB_RESOURCES_STATIC_LOCATIONS: "classpath:/static/,file:uploads/"
+
+  ADMIN_EMAIL: "yassinebenafia9@gmail.com"
+  APP_NAME: "PeakWell Forum"
+
+  GROQ_API_URL: "https://api.groq.com/openai/v1/chat/completions"

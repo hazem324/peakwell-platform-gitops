@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: ai-booking-service
+spec:
+  type: ClusterIP      # Internal cluster communication only
+  selector:
+    app: ai-booking-app        # MUST match your Deployment's template labels
+  ports:
+  - protocol: TCP
+    port: 8000           # The port the Service listens on inside the cluster
+    targetPort: 8000     # The port your container is actually running on

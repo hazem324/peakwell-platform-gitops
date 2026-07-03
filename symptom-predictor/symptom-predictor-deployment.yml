@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ai-ymptom-predictor
+  labels:
+    app: ai-ymptom-predictor-app
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: ai-ymptom-predictor-app
+  template:
+    metadata:
+      labels:
+        app: ai-ymptom-predictor-app
+    spec:
+      containers:
+      - name: peakwell-ai-ymptom-predictor
+        image: hazem231/ai-ymptom-predictor:v7
+        ports:
+        - containerPort: 8000
+        resources:
+          limits:
+            cpu: "500m"
+            memory: "512Mi"
+          requests:
+            cpu: "250m"
+            memory: "256Mi"
