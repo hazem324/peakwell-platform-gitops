@@ -24,9 +24,9 @@ spec:
 
         envFrom:
         - configMapRef:
-            name: backend-config
+            name: peakwell-config
         - secretRef:
-            name: backend-secret
+            name: peakwell-secret
 
         resources:
           requests:
