@@ -5,7 +5,7 @@ metadata:
   labels:
     app: ai-ymptom-predictor-app
 spec:
-  replicas: 2
+  replicas: 1
   selector:
     matchLabels:
       app: ai-ymptom-predictor-app

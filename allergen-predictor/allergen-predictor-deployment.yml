@@ -5,7 +5,7 @@ metadata:
   labels:
     app: allergen-predictor-app
 spec:
-  replicas: 2
+  replicas: 1
   selector:
     matchLabels:
       app: allergen-predictor-app
