@@ -21,7 +21,7 @@ spec:
             - configMapRef:
                 name: peakwell-config
             - secretRef:
-                name: peakwell-secrets
+                name: peakwell-secret
           ports:
             - containerPort: 8080
             - containerPort: 9000

@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: peakwell-ai-event
-        image: hazem231/ai-event:v7
+        image: hazem231/ai-event:v8
         ports:
         - containerPort: 8004
         resources:

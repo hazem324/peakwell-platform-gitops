@@ -12,11 +12,16 @@ data:
   SPRING_JPA_HIBERNATE_DDL_AUTO: "update"
   SPRING_JACKSON_SERIALIZATION_WRITE_DATES_AS_TIMESTAMPS: "false"
 
+  SPRING_DATASOURCE_URL: "jdbc:mysql://db-service:3306/peakwell?createDatabaseIfNotExist=true&useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC"
+  SPRING_DATASOURCE_USERNAME: "appuser"
+  SPRING_DATASOURCE_DRIVER_CLASS_NAME: "com.mysql.cj.jdbc.Driver"
+  APP_PUBLIC_URL: "http://frontend-service"
+
   KEYCLOAK_SERVER_URL: "http://keycloak-service:8180"
   KEYCLOAK_PUBLIC_URL: "http://keycloak-service:8180"
   KEYCLOAK_REALM: "peakwell"
   KEYCLOAK_CLIENT_ID: "spring-client"
-  KEYCLOAK_CLIENT_FRONT: "angular-client"
+  KEYCLOAK_CLIENT_ID_FRONT: "angular-client"
 
   SPRING_SECURITY_OAUTH2_RESOURCESERVER_JWT_ISSUER_URI: "http://keycloak-service:8180/realms/peakwell"
 

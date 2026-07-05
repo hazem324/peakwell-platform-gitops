@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: ai-event-service
+  name: ai-sport-service
 spec:
   type: ClusterIP      # Internal cluster communication only
   selector:

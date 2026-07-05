@@ -8,5 +8,5 @@ spec:
     app: frontend-app        # MUST match your Deployment's template labels
   ports:
   - protocol: TCP
-    port: 4200           # The port the Service listens on inside the cluster
+    port: 4200        # The port the Service listens on inside the cluster
     targetPort: 80     # The port your container is actually running on
