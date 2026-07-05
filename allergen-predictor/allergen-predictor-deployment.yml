@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: peakwell-allergen-predictor
-        image: hazem231/allergen-predictor:v8
+        image: hazem231/allergen-predictor:v10
         ports:
         - containerPort: 8003
         resources:

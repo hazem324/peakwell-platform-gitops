@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: peakwell-ai-booking
-        image: hazem231/ai-booking:v8
+        image: hazem231/ai-booking:v10
         ports:
         - containerPort: 8001
         resources:

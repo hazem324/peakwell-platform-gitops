@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: peakwell-ai-symptom-predictor
-        image: hazem231/ai-symptom-predictor:v8
+        image: hazem231/ai-symptom-predictor:v10
         ports:
         - containerPort: 8000
         resources:
