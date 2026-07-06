@@ -1,0 +1,36 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+
+resources:
+  - namespace.yaml
+
+  - backend/backend-deployment.yml
+  - backend/backend-service.yml
+
+  - frontend/frontend-deployment.yml
+  - frontend/frontend-service.yml
+
+  - mysql/pv.yml
+  - mysql/pvc.yml
+  - mysql/mysql-deployment.yml
+  - mysql/mysql-service.yml
+
+  - keycloak/keycloak-pvc.yml
+  - keycloak/keycloak-deployment.yml
+  - keycloak/keycloak-clusterip-service.yml
+
+  - ai-booking/ai-booking-deployment.yml
+  - ai-booking/ai-booking-service.yml
+
+  - ai-event/ai-event-deployment.yml
+  - ai-event/ai-event-service.yml
+
+  - allergen-predictor/allergen-predictor-deployment.yml
+  - allergen-predictor/allergen-predictor-service.yml
+
+  - symptom-predictor/symptom-predictor-deployment.yml
+  - symptom-predictor/symptom-predictor-service.yml
+
+  - peakwell-configMap.yml
+  - secret.yml
+  - ingress.yml
