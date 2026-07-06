@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: peakwell-backend
-        image: hazem231/peakwell-backend:v10
+        image: hazem231/peakwell-backend:v90
         imagePullPolicy: IfNotPresent
 
         ports:
