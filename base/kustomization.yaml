@@ -32,5 +32,4 @@ resources:
   - symptom-predictor/symptom-predictor-service.yml
 
   - peakwell-configMap.yml
-  - secret.yml
   - ingress.yml
