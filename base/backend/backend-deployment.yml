@@ -35,30 +35,3 @@ spec:
           limits:
             cpu: "500m"
             memory: "512Mi"
-
-        startupProbe: 
-          httpGet:
-            path: /health/startup
-            port: 8090
-          periodSeconds: 10 
-          failureThreshold: 30 
-          timeoutSeconds: 2 
-          successThreshold: 1
-        
-        livenessProbe: 
-          httpGet: 
-            path: /health/live 
-            port: 8090 
-          periodSeconds: 10 
-          failureThreshold: 3 
-          timeoutSeconds: 2 
-          successThreshold: 1 
-
-        readinessProbe: 
-          httpGet: 
-            path: /health/ready 
-            prot: 8090 
-          periodSeconds: 5 
-          failureThreshold: 2 
-          timeoutSeconds: 2 
-          successThreshold: 1 
