@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: peakwell-frontend
-        image: hazem231/peakwell-frontend:v10
+        image: hazem231/peakwell-frontend:v13
         ports:
         - containerPort: 80
         resources:
