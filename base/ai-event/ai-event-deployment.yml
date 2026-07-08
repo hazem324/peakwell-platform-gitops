@@ -16,13 +16,32 @@ spec:
     spec:
       containers:
       - name: peakwell-ai-event
-        image: hazem231/ai-event:v10
+        image: hazem231/ai-event:v20
         ports:
         - containerPort: 8004
+
+        readinessProbe:
+          httpGet:
+            path: /health/ready
+            port: 8004
+          initialDelaySeconds: 5
+          periodSeconds: 10
+          timeoutSeconds: 3
+          failureThreshold: 3
+
+        livenessProbe:
+          httpGet:
+            path: /health/live
+            port: 8004
+          initialDelaySeconds: 10
+          periodSeconds: 20
+          timeoutSeconds: 3
+          failureThreshold: 3
+
         resources:
-          limits:
-            cpu: "500m"
-            memory: "512Mi"
           requests:
             cpu: "250m"
             memory: "256Mi"
+          limits:
+            cpu: "500m"
+            memory: "512Mi"
