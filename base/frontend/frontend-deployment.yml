@@ -17,8 +17,10 @@ spec:
       containers:
       - name: peakwell-frontend
         image: hazem231/peakwell-frontend:v13
+
         ports:
         - containerPort: 80
+
         resources:
           limits:
             cpu: "500m"
@@ -26,3 +28,23 @@ spec:
           requests:
             cpu: "250m"
             memory: "256Mi"
+
+        readinessProbe:
+          httpGet:
+            path: /healthz
+            port: 80
+          initialDelaySeconds: 5
+          periodSeconds: 10
+          timeoutSeconds: 2
+          successThreshold: 1
+          failureThreshold: 3
+
+        livenessProbe:
+          httpGet:
+            path: /healthz
+            port: 80
+          initialDelaySeconds: 15
+          periodSeconds: 20
+          timeoutSeconds: 2
+          successThreshold: 1
+          failureThreshold: 3
