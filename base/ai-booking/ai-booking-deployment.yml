@@ -2,6 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: ai-booking
+  namespace: peakwell
   labels:
     app: ai-booking-app
 spec:
