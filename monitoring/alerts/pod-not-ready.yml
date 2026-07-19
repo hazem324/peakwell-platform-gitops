@@ -1,0 +1,19 @@
+apiVersion: monitoring.coreos.com/v1
+kind: PrometheusRule
+metadata:
+  name: pod-not-ready
+  namespace: monitoring
+  labels:
+    release: monitoring
+spec:
+  groups:
+  - name: pod-not-ready.rules
+    rules:
+    - alert: PodNotReady
+      expr: kube_pod_status_ready{condition="true"} == 0
+      for: 2m
+      labels:
+        severity: warning
+      annotations:
+        summary: "Pod not ready"
+        description: "Pod {{ $labels.namespace }}/{{ $labels.pod }} has not been Ready for more than 2 minutes."

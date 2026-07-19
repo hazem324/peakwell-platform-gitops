@@ -1,0 +1,29 @@
+apiVersion: monitoring.coreos.com/v1
+kind: PrometheusRule
+metadata:
+  name: high-node-memory
+  namespace: monitoring
+  labels:
+    release: monitoring
+spec:
+  groups:
+  - name: high-node-memory.rules
+    rules:
+    - alert: HighNodeMemoryUsage
+      expr: |
+        (
+          (
+            1 -
+            (
+              node_memory_MemAvailable_bytes
+              /
+              node_memory_MemTotal_bytes
+            )
+          ) * 100
+        ) > 90
+      for: 5m
+      labels:
+        severity: warning
+      annotations:
+        summary: "High memory usage"
+        description: "Memory usage on {{ $labels.instance }} has exceeded 90%."

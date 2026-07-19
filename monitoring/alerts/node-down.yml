@@ -1,0 +1,19 @@
+apiVersion: monitoring.coreos.com/v1
+kind: PrometheusRule
+metadata:
+  name: node-down
+  namespace: monitoring
+  labels:
+    release: monitoring
+spec:
+  groups:
+  - name: node-down.rules
+    rules:
+    - alert: NodeDown
+      expr: up{job="node-exporter"} == 0
+      for: 2m
+      labels:
+        severity: critical
+      annotations:
+        summary: "Node Exporter is down"
+        description: "Node {{ $labels.instance }} has not been reachable for more than 2 minutes."
